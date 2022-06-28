@@ -2,10 +2,11 @@ package models
 
 import (
 	"fmt"
+	"os"
+
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
-	"os"
 )
 
 var dbConn *gorm.DB
