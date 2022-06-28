@@ -19,7 +19,7 @@ func init() {
 
 func initDomain() string {
 	appEnv := os.Getenv("APP_ENV")
-	appPort := os.Getenv("API_PORT")
+	appPort := os.Getenv("PORT")
 
 	// for local
 	domain := "localhost"
