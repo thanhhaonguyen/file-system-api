@@ -2,6 +2,7 @@ package models
 
 import (
 	"fmt"
+	"log"
 	"os"
 
 	"gorm.io/driver/postgres"
@@ -18,12 +19,12 @@ func GetDSN() string {
 	pgHost := os.Getenv("PG_HOST")
 	pgPort := os.Getenv("PG_PORT")
 	pgSsl := os.Getenv("PG_SSL")
-	pgTimeZone := os.Getenv("PG_TIMEZONE")
 
-	return fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=%s TimeZone=%s", pgHost, pgUser, pgPassword, pgDb, pgPort, pgSsl, pgTimeZone)
+	return fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=%s", pgHost, pgUser, pgPassword, pgDb, pgPort, pgSsl)
 }
 
 func CreateDBConnection() {
+	log.Print(GetDSN())
 	db, err := gorm.Open(postgres.New(postgres.Config{
 		DSN:                  GetDSN(),
 		PreferSimpleProtocol: true,
