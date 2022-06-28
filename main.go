@@ -4,9 +4,10 @@ import (
 	controller "file-system-api/controllers/v1"
 	"file-system-api/middlewares/cors"
 	"file-system-api/models"
-	"github.com/joho/godotenv"
 	"log"
 	"os"
+
+	"github.com/joho/godotenv"
 
 	"github.com/gin-gonic/gin"
 )
