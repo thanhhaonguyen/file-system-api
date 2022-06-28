@@ -19,8 +19,9 @@ func GetDSN() string {
 	pgHost := os.Getenv("PG_HOST")
 	pgPort := os.Getenv("PG_PORT")
 	pgSsl := os.Getenv("PG_SSL")
+	pgTimeZone := os.Getenv("PG_TIMEZONE")
 
-	return fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=%s", pgHost, pgUser, pgPassword, pgDb, pgPort, pgSsl)
+	return fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=%s TimeZone=%s", pgHost, pgUser, pgPassword, pgDb, pgPort, pgSsl, pgTimeZone)
 }
 
 func CreateDBConnection() {
